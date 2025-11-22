@@ -1,8 +1,11 @@
 # Especificação Técnica: Sistema de Carrossel Dinâmico - Stand Farense
 
 **Unidade Curricular** Tecnologias Web
+
 **Docente** Nuno José de Sousa Rodrigues
+
 **Desenvolvido por:** João Azul (a91152)
+
 **Versão:** TP2
 
 ---
