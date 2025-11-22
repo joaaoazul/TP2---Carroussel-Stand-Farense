@@ -21,9 +21,6 @@ A solução segue uma arquitetura Cliente-Servidor, onde a comunicação de dado
 
 ---
 
-
----
-
 ## 4. Implementação Frontend e AJAX
 
 A lógica do lado do cliente (script.js) é responsável pela interatividade. 
