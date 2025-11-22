@@ -1,8 +1,9 @@
 # Especificação Técnica: Sistema de Carrossel Dinâmico - Stand Farense
 
-**Projeto:** Tecnologias Web - TP2
+**Unidade Curricular** Tecnologias Web
+**Docente** Nuno José de Sousa Rodrigues
 **Desenvolvido por:** João Azul (a91152)
-**Versão:** 1.0.0
+**Versão:** TP2
 
 ---
 
@@ -21,30 +22,30 @@ A solução segue uma arquitetura Cliente-Servidor, onde a comunicação de dado
 
 ---
 
-## 4. Implementação Frontend e AJAX
+## 3. Implementação Frontend e AJAX
 
 A lógica do lado do cliente (script.js) é responsável pela interatividade. 
 A tecnologia AJAX é utilizada em três momentos cruciais do ciclo de vida da aplicação:
 
-### 4.1. Inicialização (Carregamento Dinâmico)
+### 3.1 Inicialização (Carregamento Dinâmico)
 
-    Ação: Ao abrir a página.
+Ação: Ao abrir a página.
 
-    Método AJAX: GET /api/imagens
+Método AJAX: GET /api/imagens
 
-    Descrição: O script envia um pedido assíncrono ao servidor para obter a lista de imagens existentes na pasta. 
+Descrição: O script envia um pedido assíncrono ao servidor para obter a lista de imagens existentes na pasta. 
     Isto permite adicionar novas fotos à pasta sem alterar uma única linha de código no frontend.
 
-### 4.2. Registo de Interação (Logging)
+### 3.2 Registo de Interação (Logging)
 
-    Ação: Sempre que uma imagem é apresentada no carrossel.
+Ação: Sempre que uma imagem é apresentada no carrossel.
 
-    Método AJAX: POST /api/log
+Método AJAX: POST /api/log
 
-    Descrição: É enviado um pacote de dados (JSON) contendo a ação ("ver"), o nome da imagem e a data. 
+Descrição: É enviado um pacote de dados (JSON) contendo a ação ("ver"), o nome da imagem e a data. 
     O envio é feito em "segundo plano", não interrompendo a navegação do utilizador.
 
-### 4.3. Métricas de Navegação (Analytics)
+### 3.3 Métricas de Navegação (Analytics)
 
 Ação: Clique nos botões "Anterior" ou "Seguinte".
 
@@ -52,23 +53,23 @@ Método AJAX: POST /api/click
 
 Descrição: O sistema regista a intenção do utilizador (direção do clique). O servidor processa estes dados para calcular estatísticas de uso (ex: preferência por avançar ou recuar).
 
-## 5. Especificação da API (Backend)
+## 4. Especificação da API (Backend)
 
 O servidor (server.js) expõe endpoints REST para servir o frontend.
 
-### 5.1. Rota: GET /api/imagens
+### 4.1 Rota: GET /api/imagens
 
 Função: Leitura do diretório de imagens.
 
 Processo: Utiliza o módulo fs (File System) para ler a pasta public/images, filtra ficheiros com extensões válidas (.png, .jpg, etc.) e retorna um array JSON para o cliente.
 
-### 5.2. Rota: POST /api/log
+### 4.2 Rota: POST /api/log
 
 Função: Auditoria de acessos.
 
 Processo: Recebe o objeto JSON do frontend, adiciona o endereço IP do cliente e anexa a entrada ao ficheiro logs.txt.
 
-### 5.3. Rota: POST /api/click
+### 4.3 Rota: POST /api/click
 
 Função: Contabilização estatística.
 
@@ -82,13 +83,13 @@ Processo:
 
         Reescreve o ficheiro com o novo sumário estatístico.
 
-## 6. Interface e Design
+## 5. Interface e Design
 
     Estilo: Utilização de Glassmorphism (efeito de vidro fosco com backdrop-filter) para uma estética moderna.
 
     Responsividade: O CSS adapta o tamanho do carrossel e dos botões para dispositivos móveis (ecrãs inferiores a 520px).
 
-## 7. Instruções de Instalação
+## 6. Instruções de Instalação
 
     Instalar Dependências: Na raiz do projeto, executar:
     Bash
