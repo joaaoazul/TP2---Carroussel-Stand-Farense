@@ -92,12 +92,9 @@ Processo:
 
     Instalar Dependências: Na raiz do projeto, executar:
     Bash
-
-npm install express
-
-Executar Servidor:
-Bash
-
-node server.js
+    npm install express
+    Executar Servidor:
+    Bash
+    node server.js
 
 Acesso: Abrir o navegador em http://localhost:3000. As imagens devem estar colocadas na pasta public/images para serem carregadas automaticamente.
